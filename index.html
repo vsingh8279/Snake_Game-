@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Snake Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            body{
+                margin: 0px;
+                padding: 0px;
+                background-color: black;
+            }
+           
+            
+            .container{
+                height: 100vh;
+                width: 100%;
+               
+                display: flex;
+                
+                flex-direction: row;
+ 
+                
+            }
+            .info{
+                height: 100vh;
+                width: 40%;
+                display: flex;
+                
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .heading{
+                color: #219d00;
+                font-size: 10vh;
+            }
+            .text{
+                border: 2px solid white;
+                padding: 5px;
+            }
+           
+            .para{
+                color: white;
+                text-align: center;
+
+            }
+            .game-board{
+                height: 90vmin;
+                width: 90vmin;
+                margin: auto;
+                background: linear-gradient(rgb(90, 198, 234),yellow);
+                border: 4px solid #219d00;
+                display: grid;
+                 
+                /* grid template row and column will create a 
+                cordination system whose origin will be at top
+                left side*/ 
+                grid-template-columns:repeat(16,1fr) ;
+                 grid-template-rows: repeat(16,1fr);
+               
+            }
+          
+            .score{
+                width: 40%;
+                background-color:yellow ;
+                font-size: 4vh;
+                padding: 10px;
+                border-radius: 20px;
+                text-align: center;
+            }
+            .snake{
+                background-color:#219d00;
+                border: 2px solid black;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color:white;
+            }
+            .head{
+               background: url(snake.png);
+               background-size: 100% 100%; 
+               display: flex;
+                align-items: center;
+                justify-content: center;
+                color:white;
+            }
+            .food{
+               background: url(apple.png);
+               background-size: 100% 100%; 
+            }
+            .footer{
+               
+                 
+                width: 100%;
+                color: rgb(255, 255, 255);
+                font-size: 2vh;
+                text-align: center;
+                margin: 0px;
+                padding: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <div class="info">
+                <h1 class="heading">Snake Game</h1>
+                <h2 class="score">Score : <span id="score">0</span> </h2>
+                <div class="text">
+                    <p class="para">How to play ?</p>
+                    <p class="para">1.Use the arrow keys to move the snake to eat the apple. </p>
+                    <p class="para">2.Game will be over if snake head touch the boundary or its own body. </p>
+                </div>
+                <div class="footer">
+                   
+                    <p>copyright &copy Vishal Singh</p>
+                </div>
+            </div>
+            
+            <div class="game-board" id="gameArea">
+            </div>
+        </div>
+
+        
+        <!-- html-->
+        <script src="gameScript.js" async defer></script>
+    </body>
+</html>
